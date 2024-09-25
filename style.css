@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #79d4f8;
+    color: #333;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+    padding-top: 20px;
+}
+.texto {
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    margin: 0 auto;
+    padding: auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #00695c;
+}
+
+h2, h3 {
+    font-size: 1.8em;
+    color: #004d40;
+    margin-bottom: 15px;
+}
+
+.botoes-estados, .botoes-cidades {
+    display: flex;
+    flex-wrap: wrap; /* Permite os botões ocuparem várias linhas */
+    column-count: auto;
+    gap: 10px; /* Espaçamento entre os botões */
+    justify-content: center; /* Centraliza os botões */
+}
+
+.botoes-cidades {
+    justify-content: flex-start; /* Alinha as cidades ao lado esquerdo */
+}
+
+button.estado-btn, button.cidade-btn {
+    padding: 12px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    background-color: #00695c;
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button.estado-btn:hover, button.cidade-btn:hover {
+    background-color: #004d40;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+button.estado-btn:disabled, button.cidade-btn:disabled {
+    background-color: #b2dfdb;
+    color: #666;
+    cursor: not-allowed;
+}
+
+button {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 600px) {
+    .botoes-estados, .botoes-cidades {
+        flex-direction: column;
+    }
+
+    button.estado-btn, button.cidade-btn {
+        max-width: 100%;
+        flex: none;
+    }
+}
+
+.cidade-btn {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
